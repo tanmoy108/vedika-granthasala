@@ -7,6 +7,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+export const generateMetadata = ({params}) =>{
+  const { chapter, verse } = params;
+  return{
+  title: `ShrimadBhagwat Geeta chapter ${chapter} verse ${verse}`,
+  description: `Information of gita chapter no ${chapter} gita verse no ${verse} of Shrimad Bhagwat Geeta`,}
+};
+
+
 const getReferences = async () => {
   const fetchReference = await fetch(
     `${process.env.BASE_URL}api/gitas/references`
@@ -35,6 +43,7 @@ const GetSpecificVerse = async (chapter, verse) => {
   const data = await response.json();
   return data;
 };
+
 
 const Page = async ({ params }) => {
   const { chapter, verse } = params;

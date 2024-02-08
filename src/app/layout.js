@@ -2,6 +2,7 @@ import { Poppins,Montserrat } from "next/font/google";
 import "./globals.css";
 import CommonLayout from "./features/navbar/commonLayout";
 import Providers from "@/redux/provider";
+import Footer from "./component/footer";
 
 const poppins = Poppins({ subsets: ["latin"], weight: "300",display:'swap' });
 const montserrat = Montserrat({ subsets: ["latin"], weight: "500",display:'swap' });
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
             <div>
               {children}
             </div>
+            <Footer/>
          </Providers>
         </div>
         </body>

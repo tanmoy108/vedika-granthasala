@@ -8,6 +8,10 @@ import { SelectStatus, setIsOpen } from "./navbarSlice";
 
 const barContent = [
     {
+        item:"Home",
+        url:"/"
+    },
+    {
         item:"Gita",
         url:"/features/gita"
     },
@@ -26,10 +30,6 @@ const barContent = [
     {
         item:"About us",
         url:"/features/about"
-    },
-    {
-        item:"Admin",
-        url:"/features/admin"
     },
 ];
 const BarLayout = () => {
@@ -57,13 +57,13 @@ const BarLayout = () => {
       <div className="barlayout rounded-md bg-[#FCECDD]/90 w-3/4 p-8">
         <div className="text-right mb-10">
           <button onClick={closeModal}>
-            <XMarkIcon className="h-7 w-7 hover:text-[#FF6701]" />
+            <XMarkIcon className="h-7 w-7 hover:text-[#ff933b]" />
           </button>
         </div>
         <div className="text-center">
           {barContent.map((item, index) => {
             return (
-              <p key={index} className="p-2 m-2 tracking-widest hover:border-x-4 border-[#FF6701]">
+              <p key={index} className="p-2 m-2 tracking-widest hover:border-x-4 text-[#5e5e5e] border-[#ff933b]">
                     <Link onClick={handleLinkClick} href={item.url} >{item.item}</Link>
               </p>
             );

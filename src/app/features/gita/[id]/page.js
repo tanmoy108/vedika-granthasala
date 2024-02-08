@@ -27,14 +27,8 @@ const Page = async ({ params }) => {
     if(parseInt(params.id)>18  || parseInt(params.id) < 1 ) notFound()
   const chapterDetails = await Details(params.id);
 
-  const backgroundStyle = {
-    backgroundImage: `url("/gitastyle.jpg")`, 
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    height:'100%',
-};
   return (
-    <div className="w-full h-full" style={backgroundStyle}>
+    <div className="w-full h-full">
       <div className="mx-auto w-[80%] mt-20 ">
       <Link href="/features/gita">
         <Button variant="own">Back</Button>
@@ -44,15 +38,15 @@ const Page = async ({ params }) => {
           Chapter {chapterDetails.chapter_number}
         </p>
         <p className="text-2xl font-black text-[#374246]"> {chapterDetails.name_translated}</p>
-        <p className="text-md text-left"> {chapterDetails.chapter_summary}</p>
+        <p className="text-md text-left text-[#5e5e5e]"> {chapterDetails.chapter_summary}</p>
       </div>
       <div className="my-5">
         <p className="text-md text-left">
-          <span className="font-semibold">Name Meaning:</span>{" "}
+          <span className="font-semibold text-[#374246]">Name Meaning:</span>{" "}
           {chapterDetails.name_meaning}
         </p>
         <p className="text-md text-left">
-          <span className="font-semibold">Verses Number:</span>{" "}
+          <span className="font-semibold text-[#374246]">Verses Number:</span>{" "}
           {chapterDetails.verses_count}
         </p>
       </div>

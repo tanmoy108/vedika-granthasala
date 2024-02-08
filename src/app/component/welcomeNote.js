@@ -7,8 +7,6 @@ const WelcomeNote = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height:"max-content",
-        width:"100vw"
-        
     };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3" style={backgroundStyle} >
