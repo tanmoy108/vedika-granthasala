@@ -50,6 +50,7 @@ const Library = ({ books, cat, lan }) => {
                       width={400}
                       height={0}
                       style={{ objectFit: "cover" }}
+                      className=" opacity-90"
                     />
                     <div className="flex justify-between">
                       <p className="text-sm font-semibold p-2 text-[#ff933b]">
@@ -82,6 +83,7 @@ const Library = ({ books, cat, lan }) => {
                       width={400}
                       height={80}
                       style={{ objectFit: "cover" }}
+                      className="opacity-90"
                     />
                     <div className="flex justify-between">
                       <p className="text-sm font-semibold p-2 text-[#ff933b]">

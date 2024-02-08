@@ -11,6 +11,7 @@ export const metadata = {
   description: "Vedika Granthasala Layout Page",
 };
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

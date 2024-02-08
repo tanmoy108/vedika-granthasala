@@ -31,7 +31,7 @@ const AuthorBook = ({ name, id, bookInfo }) => {
                         alt={item.title}
                         width={500}
                         height={0}
-                        className="h-full w-full object-cover object-center group-hover:opacity-75"
+                        className="h-full w-full object-cover object-center opacity-90 group-hover:opacity-75"
                       />
                     </div>
                     <h3 className="mt-4 text-sm font-bold text-[#374246]">
