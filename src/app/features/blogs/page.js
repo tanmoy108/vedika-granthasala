@@ -1,6 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Blog - Vedika Granthasala",
+  description: "Hinduism Blog, vedas, gita, scriptures",
+};
+
+
 export const getAllBlogs = async () => {
   const fetchBlog = await fetch(`${process.env.BASE_URL}api/blogs`, {
     next: { revalidate: 10 },

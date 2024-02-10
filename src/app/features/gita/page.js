@@ -16,7 +16,6 @@ export const getAllChapters = async () => {
 
 const Gita = async () => {
   const chapters = await getAllChapters();
-  console.log(chapters);
   return (
     <div className="w-[80%] mx-auto mt-5">
       <p className="text-4xl font-extrabold text-center text-[#374246]">Gita</p>
@@ -26,12 +25,12 @@ const Gita = async () => {
           {chapters.length > 0 &&
             chapters.map((item, index) => {
               return (
-                <Link href={`/features/gita/${item.chapter_number}`} key={index}>
+                <Link href={`/features/gita/${item?.chapter_number}`} key={index}>
                   <div
                     className="w-[100%] h-50 bg-white/70  p-5 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:bg-[#ffcd9f]/60"
                   >
                     <p className="text-md font-bold mb-2 text-left text-[#ff933b]">
-                      Chapter {item.chapter_number}
+                      Chapter {item?.chapter_number}
                     </p>
                     <p className="text-lg font-bold mb-2 text-left antialiased text-[#374246]">
                       {item.name_translated}

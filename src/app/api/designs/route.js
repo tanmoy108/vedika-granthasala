@@ -14,17 +14,3 @@ export async function GET() {
     return NextResponse.json({ success: false, result: designData, status: 500 });
   }
 }
-
-export async function POST(request) {
-  await mongoose.connect(process.env.DB);
-  const payload = await request.json();
-  let result = null;
-  try {
-    const design = new designs(payload);
-    result = await design.save();
-    return NextResponse.json({ success: true, result, status: 201 });
-  } catch (error) {
-    console.error(`[${new Date().toISOString()}] POST Error:`, error);
-    return NextResponse.json({ success: false, result: `Error: ${error.message}`, status: 500 });
-  }
-}

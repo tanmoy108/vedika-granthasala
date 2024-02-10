@@ -81,9 +81,11 @@ const DetailsBlog = async({ blog }) => {
             newFilteredarr.filter(item=>item.id!==blog.id).slice(0, 4).map((product) => (
               <Link key={product.id} href={`/features/blogs/${product.id}`} className="group">
                 <div className="aspect-h-1 h-80 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                  <img
+                  <Image
                     src={product?.blogimage}
                     alt={product.title}
+                    width={500}
+                    height={800}
                     className="h-full w-full object-cover object-center opacity-85 group-hover:opacity-70"
                   />
                 </div>

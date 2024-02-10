@@ -1,4 +1,12 @@
+import Image from "next/image";
 import React from "react";
+
+export const metadata = {
+  title: "Poster - Vedika Granthasala",
+  description: "Hinduism Poster, design, mantra, shokha , vedas, gita, scriptures",
+};
+
+
 export const GetAllPoster = async () => {
   const posters = await fetch(`${process.env.BASE_URL}api/designs`,{next:{revalidate:10}});
   const data = await posters.json();
@@ -18,9 +26,11 @@ const Page = async () => {
             mapPoster.map((product) => (
               <a key={product.id} href={product.url} className="group">
                 <div className="aspect-h-1 h-80 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                  <img
+                  <Image
                     src={product.url}
                     alt={product.title}
+                    width={500}
+                    height={800}
                     className="h-full w-full object-cover object-center group-hover:opacity-75"
                   />
                 </div>

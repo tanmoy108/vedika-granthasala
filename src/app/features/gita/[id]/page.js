@@ -1,8 +1,14 @@
 import Link from "next/link";
 import React from "react";
-import { getAllChapters } from "../page";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
+
+export const getAllChapters = async () => {
+  const fetchBlog = await fetch(`/api/gitas/chapters`);
+  const data = await fetchBlog.json();
+  return data.result;
+};
+
 
 const Details = async (id) => {
     try {
@@ -35,7 +41,7 @@ const Page = async ({ params }) => {
       </Link>
       <div className="text-center grid gap-4 py-5 border-b-4 mt-6">
         <p className="text-md font-semibold text-[#ff933b]">
-          Chapter {chapterDetails.chapter_number}
+          Chapter {chapterDetails?.chapter_number}
         </p>
         <p className="text-2xl font-black text-[#374246]"> {chapterDetails.name_translated}</p>
         <p className="text-md text-left text-[#5e5e5e]"> {chapterDetails.chapter_summary}</p>
@@ -63,7 +69,7 @@ export async function generateStaticParams() {
       const chapters = list || [];
   
       return chapters.map((item) => ({
-        id: item.chapter_number.toString(),
+        id: item?.chapter_number.toString(),
       }));
     } catch (error) {
       console.error("Error fetching chapters:", error);

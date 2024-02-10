@@ -9,9 +9,9 @@ export default function Error({ error, reset }) {
     }, [error])
 
     return (
-        <div>
+        <div className='flex flex-col justify-center items-center'>
             <h2>Something went wrong!</h2>
-            <button
+            <button className='bg-[#fc9541] px-4 py-2'
                 onClick={
                     // Attempt to recover by trying to re-render the segment
                     () => reset()

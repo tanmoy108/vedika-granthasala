@@ -2,6 +2,12 @@ import React from "react";
 import Library from "../../library";
 import Filter from "../../filter";
 
+export const metadata = {
+  title: "Book - Vedika Granthasala",
+  description: "Hinduism Book, vedas, gita, scriptures",
+};
+
+
 const GetAllBooks = async () => {
   const response = await fetch(`${process.env.BASE_URL}api/books`,{next:{revalidate:30}});
   const data = await response.json();

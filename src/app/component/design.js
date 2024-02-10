@@ -1,6 +1,7 @@
 import React from 'react'
 import { GetAllPoster } from '../features/posters/page';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Design =async () => {
     const mapPoster = await GetAllPoster();
@@ -13,9 +14,11 @@ const Design =async () => {
             mapPoster.slice(0, 3).map((product) => (
               <Link key={product.id} href={product.url} className="group">
                 <div className="aspect-h-1 h-80 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                  <img
+                  <Image
                     src={product.url}
                     alt={product.title}
+                    width={500}
+                    height={800}
                     className="h-full w-full object-cover object-center opacity-85 group-hover:opacity-70"
                   />
                 </div>
