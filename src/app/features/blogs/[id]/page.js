@@ -6,7 +6,7 @@ import { BASE_URL } from "@/lib/constant";
 export const GetSpecificBlog = async (id) => {
   const fetchBlog = await fetch(
     `${BASE_URL}/api/blogs/specific/${id}`,
-    { next: { revalidate: 10 } }
+    { next: { revalidate: 5 } }
   );
   const data = await fetchBlog.json();
   return data.result;

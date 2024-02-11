@@ -10,7 +10,7 @@ export const metadata = {
 
 export const getAllBlogs = async () => {
   const fetchBlog = await fetch(`${BASE_URL}/api/blogs`, {
-    next: { revalidate: 10 },
+    next: { revalidate: 5 },
   });
   const data = await fetchBlog.json();
   return data.result;

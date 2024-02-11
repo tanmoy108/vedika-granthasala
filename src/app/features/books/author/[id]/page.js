@@ -12,7 +12,7 @@ const GetData = async (id) => {
   return res.result;
 };
 const GetAllBooks = async () => {
-  const response = await fetch(`${BASE_URL}/api/books`, { next: { revalidate: 10 } });
+  const response = await fetch(`${BASE_URL}/api/books`, { next: { revalidate: 5 } });
   const data = await response.json();
   return data.result;
 };

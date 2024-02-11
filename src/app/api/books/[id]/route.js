@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { books } from "@/lib/modal/books";
 import { NextResponse } from "next/server";
-
+export const revalidate = 0;
 export async function GET(req, { params }) {
   let data = {};
   try {

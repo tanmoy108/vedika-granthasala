@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 import cloudinary from 'cloudinary';
 
-
+export const revalidate = 0;
 // Configure Cloudinary at the beginning of your application
 cloudinary.config({
     cloud_name: 'shtanmoy',

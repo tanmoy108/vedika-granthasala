@@ -1,7 +1,7 @@
 import { books } from "@/lib/modal/books";
 import mongoose, { mongo } from "mongoose";
 import { NextResponse } from "next/server";
-
+export const revalidate = 0;
 export async function GET() {
   let bookData = [];
   try {

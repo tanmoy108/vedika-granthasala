@@ -9,7 +9,7 @@ export const metadata = {
 
 
 export const GetAllPoster = async () => {
-  const posters = await fetch(`${BASE_URL}/api/designs`,{next:{revalidate:10}});
+  const posters = await fetch(`${BASE_URL}/api/designs`,{next:{revalidate: 5}});
   const data = await posters.json();
   return data.result;
 };

@@ -1,7 +1,7 @@
 import { designs } from "@/lib/modal/designs";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
-
+export const revalidate = 0;
 export async function GET() {
   await mongoose.connect(process.env.DB);
   let designData = [];
