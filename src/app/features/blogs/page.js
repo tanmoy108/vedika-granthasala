@@ -33,7 +33,7 @@ const Page = async () => {
                   <Link href={`/features/blogs/${item.id}`}>
                     <div className="overflow-hidden h-[60%] clipingcss">
                       <Image
-                        className="rounded-t-lg h-full"
+                        className="rounded-t-lg h-full opacity-90"
                         src={item?.blogimage}
                         alt={item?.title}
                         width={700}
@@ -42,7 +42,7 @@ const Page = async () => {
                     </div>
                     <div className="p-3 h-[50%] flex flex-col">
                       <div className="h-[90%] overflow-hidden">
-                      <h5 className="mb-2 md:text-xl font-bold tracking-tight text-gray-900">
+                      <h5 className="mb-2 md:text-lg font-semibold tracking-tight text-[#374246]">
                         {item?.title}
                       </h5>
                       </div>

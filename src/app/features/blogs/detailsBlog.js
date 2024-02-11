@@ -22,13 +22,11 @@ const DetailsBlog = async({ blog }) => {
   // Convert to readable time
   const readableTime = date.toLocaleDateString("en-US", options);
   return (
-    <div
-      className="bg-gray-100"
-    >
+    <div>
       <div className="bg-gray-100 w-[80%] mx-auto min-h-screen p-8">
         {/* Header */}
         <header className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-800">
+          <h1 className="text-4xl font-bold text-[#374246]">
             {blog?.title || "Blog Title"}
           </h1>
           <p className="text-gray-500 mt-2">Published on {readableTime}</p>
@@ -40,13 +38,13 @@ const DetailsBlog = async({ blog }) => {
             <Image
               src={blog?.blogimage}
               alt={blog?.title}
-              className="mb-4 rounded-md shadow-lg"
+              className="mb-4 rounded-md shadow-lg opacity-90"
               width={500}
               height={300}
             />
           </div>
           <p
-            className="text-justify"
+            className="text-justify text-[#5e5e5e] text-wrap"
             dangerouslySetInnerHTML={{
               __html: blog?.description || "Description",
             }}
@@ -84,12 +82,12 @@ const DetailsBlog = async({ blog }) => {
                   <Image
                     src={product?.blogimage}
                     alt={product.title}
-                    width={500}
+                    width={700}
                     height={800}
                     className="h-full w-full object-cover object-center opacity-85 group-hover:opacity-70"
                   />
                 </div>
-                <h3 className="mt-4 text-sm text-[#5e5e5e]">{product.title}</h3>
+                <h3 className="mt-4 text-sm text-[#5e5e5e] font-semibold">{product.title}</h3>
               </Link>
             ))}
         </div>
