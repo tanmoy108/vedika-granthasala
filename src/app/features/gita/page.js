@@ -4,7 +4,7 @@ import Link from "next/link";
 import { BASE_URL } from "@/lib/constant";
 
 export const metadata = {
-  title: "Shrimad Bhagwat Geeta Vediaka Granthasala",
+  title: "Shrimad Bhagwat Geeta Vedika Granthasala",
   description: "Shrimad Bhagwat Geeta Page of Vedika Granthasala",
 };
 

@@ -29,7 +29,7 @@ export default function CommonLayout() {
         >
           <Image src={logo} alt="logo" width={1000} height={200} />
           {/* <BookOpenIcon className="h-7 w-7 text-white" />
-          <h1 className="text-white text-xl font-semibold">Vedikha Granthasala</h1> */}
+          <h1 className="text-white text-xl font-semibold">Vedika Granthasala</h1> */}
         </div>
         <div className="flex items-center space-x-4">
           <button type="button" onClick={openModal}>

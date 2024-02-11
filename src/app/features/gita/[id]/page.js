@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { BASE_URL } from "@/lib/constant";
 
 export const getAllChapters = async () => {
-  const fetchBlog = await fetch(`${BASE_URL}/api/gitas/chapters`);
+  const fetchBlog = await fetch(`/api/gitas/chapters`);
   const data = await fetchBlog.json();
   return data.result;
 };
