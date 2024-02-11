@@ -1,3 +1,4 @@
+import { BASE_URL } from "@/lib/constant";
 import Image from "next/image";
 import React from "react";
 
@@ -8,12 +9,16 @@ export const metadata = {
 
 
 export const GetAllPoster = async () => {
-  const posters = await fetch(`${process.env.BASE_URL}api/designs`,{next:{revalidate:10}});
+  const posters = await fetch(`${BASE_URL}/api/designs`,{next:{revalidate:10}});
   const data = await posters.json();
   return data.result;
 };
 
 const Page = async () => {
+  if(!BASE_URL)
+  {
+    return null
+  }
   const mapPoster = await GetAllPoster();
   return (
     <div className="bg-white">

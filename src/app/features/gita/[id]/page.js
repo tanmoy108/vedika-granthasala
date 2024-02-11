@@ -2,18 +2,23 @@ import Link from "next/link";
 import React from "react";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { BASE_URL } from "@/lib/constant";
 
 export const getAllChapters = async () => {
-  const fetchBlog = await fetch(`/api/gitas/chapters`);
+  const fetchBlog = await fetch(`${BASE_URL}/api/gitas/chapters`);
   const data = await fetchBlog.json();
   return data.result;
 };
 
 
 const Details = async (id) => {
+  if(!BASE_URL)
+  {
+    return null
+  }
     try {
       const response = await fetch(
-        `${process.env.BASE_URL}api/gitas/chapters/${id}`
+        `${BASE_URL}/api/gitas/chapters/${id}`
       );
   
       if (!response.ok) {

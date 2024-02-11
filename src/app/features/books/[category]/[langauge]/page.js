@@ -1,6 +1,7 @@
 import React from "react";
 import Library from "../../library";
 import Filter from "../../filter";
+import { BASE_URL } from "@/lib/constant";
 
 export const metadata = {
   title: "Book - Vedika Granthasala",
@@ -9,12 +10,16 @@ export const metadata = {
 
 
 const GetAllBooks = async () => {
-  const response = await fetch(`${process.env.BASE_URL}api/books`,{next:{revalidate:30}});
+  const response = await fetch(`${BASE_URL}/api/books`,{next:{revalidate:30}});
   const data = await response.json();
   return data.result;
 };
 
 const Page =async ({params}) => {
+  if(!BASE_URL)
+  {
+    return null
+  }
   const bookInfo = await GetAllBooks();
 const {category,langauge,pageno} = params;
   return (

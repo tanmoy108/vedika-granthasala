@@ -4,21 +4,25 @@ import React from "react";
 import AuthorBook from "./authorBook";
 import DownloadButton from "./downloadButton";
 import { Button } from "@/components/ui/button";
+import { BASE_URL } from "@/lib/constant";
 
 const GetData = async (id) => {
-  const fetchData = await fetch(`${process.env.BASE_URL}api/books/${id}`);
+  const fetchData = await fetch(`${BASE_URL}/api/books/${id}`);
   const res = await fetchData.json();
   return res.result;
 };
 const GetAllBooks = async () => {
-  const response = await fetch(`${process.env.BASE_URL}api/books`, { next: { revalidate: 10 } });
+  const response = await fetch(`${BASE_URL}/api/books`, { next: { revalidate: 10 } });
   const data = await response.json();
   return data.result;
 };
 
 
 const Page = async ({ params }) => {
-
+  if(!BASE_URL)
+  {
+    return null
+  }
   const oneBook = GetData(params.id);
   const allBook = GetAllBooks();
 

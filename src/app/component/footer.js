@@ -79,7 +79,7 @@ const Footer = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center ">
             © 2024{" "}
-            <Link href={`${process.env.BASE_URL}`} className="hover:underline">
+            <Link href="/" className="hover:underline">
               Vedika Granthasala™
             </Link>
             . All Rights Reserved.

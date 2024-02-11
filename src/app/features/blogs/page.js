@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { BASE_URL } from "@/lib/constant";
 
 export const metadata = {
   title: "Blog - Vedika Granthasala",
@@ -8,13 +9,17 @@ export const metadata = {
 
 
 export const getAllBlogs = async () => {
-  const fetchBlog = await fetch(`${process.env.BASE_URL}api/blogs`, {
+  const fetchBlog = await fetch(`${BASE_URL}/api/blogs`, {
     next: { revalidate: 10 },
   });
   const data = await fetchBlog.json();
   return data.result;
 };
 const Page = async () => {
+  if(!BASE_URL)
+  {
+    return null
+  }
   let arr = await getAllBlogs();
   let newFilteredarr = arr && Array.isArray(arr) && arr.filter(blog=>blog.pending===false)
 

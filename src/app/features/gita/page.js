@@ -1,6 +1,7 @@
 import React from "react";
 import GitaFilter from "./gitaFilter";
 import Link from "next/link";
+import { BASE_URL } from "@/lib/constant";
 
 export const metadata = {
   title: "Shrimad Bhagwat Geeta Vediaka Granthasala",
@@ -9,12 +10,16 @@ export const metadata = {
 
 
 export const getAllChapters = async () => {
-  const fetchBlog = await fetch(`${process.env.BASE_URL}api/gitas/chapters`);
+  const fetchBlog = await fetch(`${BASE_URL}/api/gitas/chapters`);
   const data = await fetchBlog.json();
   return data.result;
 };
 
 const Gita = async () => {
+  if(!BASE_URL)
+  {
+    return null
+  }
   const chapters = await getAllChapters();
   return (
     <div className="w-[80%] mx-auto mt-5">
