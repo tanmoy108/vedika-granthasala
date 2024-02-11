@@ -24,10 +24,10 @@ const DetailsBlog = async({ blog }) => {
   };
 
   // Convert to readable time
-  const readableTime = date.toLocaleDateString("en-US", options);
+  const readableTime = date.toLocaleDateString('en-BD', options);
   return (
     <div>
-      <div className="bg-gray-100 w-[80%] mx-auto min-h-screen p-8">
+      <div className="bg-gray-100 w-[90%] mx-auto min-h-screen p-8">
         {/* Header */}
         <header className="mb-8">
           <h1 className="text-4xl font-bold text-[#374246]">

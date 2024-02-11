@@ -160,7 +160,7 @@ const GitaFilter = () => {
   };
   return (
     <div>
-      <div className="inline-flex mt-5 mx-2">
+      <div className="block md:inline-flex mt-5 mx-2">
         <select
           name="chapter"
           className="w-40 border-2 border-gray-300 rounded-md text-gray-600 font-semibold h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none "
@@ -178,7 +178,7 @@ const GitaFilter = () => {
             : null}
         </select>
       </div>
-      <div className="inline-flex my-5 mx-2">
+      <div className="block md:inline-flex my-5 mx-2">
         <select
           name="shloka"
           className="w-40 border-2 border-gray-300 rounded-md text-gray-600 font-semibold h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none "

@@ -53,7 +53,7 @@ const Page = async ({ params }) => {
   return (
     <div className="text-center mt-5">
       <GitaFilter />
-      <div className="flex flex-col items-center justify-center divide-y">
+      <div className="flex flex-col mt-5 items-center justify-center divide-y">
         {GetVerse && GetVerse.chapter_number ? (
           <>
             <div className="mb-4 xs:px-2 sm:px-6 py-5 w-3/4 bg-[#ffcd9f]/80 rounded-md text-left">
@@ -141,7 +141,6 @@ export async function generateStaticParams() {
         }))
       );
   } catch (error) {
-    console.log(error)
     return []; 
   }
 }

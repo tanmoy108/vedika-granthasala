@@ -3,6 +3,7 @@ import "./globals.css";
 import CommonLayout from "./features/navbar/commonLayout";
 import Providers from "@/redux/provider";
 import Footer from "./component/footer";
+import Hidden from "./features/blogs/hidden";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: "500",display:'swap' });
 
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
             <div>
               {children}
             </div>
+            <Hidden className="hidden"/>
             <Footer/>
          </Providers>
         </div>
