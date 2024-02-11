@@ -11,9 +11,6 @@ export const getAllChapters = async () => {
 };
 
 const Details = async (id) => {
-  if (!BASE_URL) {
-    return null;
-  }
   try {
     const response = await fetch(`${BASE_URL}/api/gitas/chapters/${id}`);
 
@@ -30,6 +27,9 @@ const Details = async (id) => {
 };
 
 const Page = async ({ params }) => {
+  if (!BASE_URL) {
+    return null;
+  }
   if (parseInt(params.id) > 18 || parseInt(params.id) < 1) notFound();
   const chapterDetails = await Details(params.id);
 
@@ -75,7 +75,7 @@ export async function generateStaticParams() {
     const chapters = list || [];
 
     return chapters.map((item) => ({
-      id: item?.chapter_number.toString(),
+      id: item?.chapter_number?.toString(), // Use optional chaining
     }));
   } catch (error) {
     console.error("Error fetching chapters:", error);

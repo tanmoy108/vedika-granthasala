@@ -17,6 +17,7 @@ export const generateMetadata = ({ params }) => {
 };
 
 const getReferences = async () => {
+  console.log("hello")
   const fetchReference = await fetch(`${BASE_URL}/api/gitas/references`);
   const data = await fetchReference.json();
   return data.result;
@@ -122,15 +123,27 @@ const Page = async ({ params }) => {
 
 export default Page;
 
-export async function generateStaticParams() {
-  if (!BASE_URL) {
-    return null;
-  }
-  const gitaNumber = await getReferences();
-  return gitaNumber.map((item) =>
-    item.verse.map((slok) => ({
-      chapter: item.chapter.toString(),
-      verse: slok.toString(),
-    }))
-  );
-}
+// export async function generateStaticParams() {
+//   if (!BASE_URL) {
+//     return null;
+//   }else{
+//   try {
+//     const gitaNumber = await getReferences();
+//     if (!gitaNumber) {
+//       return null;
+//     }
+
+//     return gitaNumber
+//       .filter(item => item && item.verse)
+//       .flatMap((item) =>
+//         item.verse.map((slok) => ({
+//           chapter: item?.chapter?.toString(),
+//           verse: slok?.toString(),
+//         }))
+//       );
+//   } catch (error) {
+//     console.log(error)
+//     return []; 
+//   }
+// }
+// }

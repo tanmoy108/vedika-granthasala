@@ -2,8 +2,12 @@ import Image from "next/image";
 import React from "react";
 import { getAllBlogs } from "./page";
 import Link from "next/link";
+import { BASE_URL } from "@/lib/constant";
 
 const DetailsBlog = async({ blog }) => {
+  if (!BASE_URL) {
+    return null;
+  }
   let arr = await getAllBlogs();
   let newFilteredarr = arr && Array.isArray(arr) && arr.filter(blog=>blog.pending===false)
   const date = new Date(blog?.date);

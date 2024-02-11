@@ -2,8 +2,13 @@ import React from 'react'
 import { GetAllPoster } from '../features/posters/page';
 import Link from 'next/link';
 import Image from 'next/image';
+import { BASE_URL } from '@/lib/constant';
 
 const Design =async () => {
+  if(!BASE_URL)
+  {
+    return null
+  }
     const mapPoster = await GetAllPoster();
   return (
     <div className='w-11/12 mx-auto'>

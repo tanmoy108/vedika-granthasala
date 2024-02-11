@@ -15,6 +15,7 @@ export const GetAllPoster = async () => {
 };
 
 const Page = async () => {
+  console.log("url",!BASE_URL)
   if(!BASE_URL)
   {
     return null
