@@ -8,22 +8,16 @@ import {
 } from "@/components/ui/accordion";
 import { BASE_URL } from "@/lib/constant";
 
-export const generateMetadata = ({params}) =>{
-  if(!BASE_URL)
-  {
-    return null
-  }
+export const generateMetadata = ({ params }) => {
   const { chapter, verse } = params;
-  return{
-  title: `ShrimadBhagwat Geeta chapter ${chapter} verse ${verse}`,
-  description: `Information of gita chapter no ${chapter} gita verse no ${verse} of Shrimad Bhagwat Geeta`,}
+  return {
+    title: `ShrimadBhagwat Geeta chapter ${chapter} verse ${verse}`,
+    description: `Information of gita chapter no ${chapter} gita verse no ${verse} of Shrimad Bhagwat Geeta`,
+  };
 };
 
-
 const getReferences = async () => {
-  const fetchReference = await fetch(
-    `${BASE_URL}/api/gitas/references`
-  );
+  const fetchReference = await fetch(`${BASE_URL}/api/gitas/references`);
   const data = await fetchReference.json();
   return data.result;
 };
@@ -49,11 +43,9 @@ const GetSpecificVerse = async (chapter, verse) => {
   return data;
 };
 
-
 const Page = async ({ params }) => {
-  if(!BASE_URL)
-  {
-    return null
+  if (!BASE_URL) {
+    return null;
   }
   const { chapter, verse } = params;
   const GetVerse = await GetSpecificVerse(chapter, verse);
@@ -131,6 +123,9 @@ const Page = async ({ params }) => {
 export default Page;
 
 export async function generateStaticParams() {
+  if (!BASE_URL) {
+    return null;
+  }
   const gitaNumber = await getReferences();
   return gitaNumber.map((item) =>
     item.verse.map((slok) => ({

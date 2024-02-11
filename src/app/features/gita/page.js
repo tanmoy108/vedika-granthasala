@@ -8,7 +8,6 @@ export const metadata = {
   description: "Shrimad Bhagwat Geeta Page of Vedika Granthasala",
 };
 
-
 export const getAllChapters = async () => {
   const fetchBlog = await fetch(`${BASE_URL}/api/gitas/chapters`);
   const data = await fetchBlog.json();
@@ -16,9 +15,8 @@ export const getAllChapters = async () => {
 };
 
 const Gita = async () => {
-  if(!BASE_URL)
-  {
-    return null
+  if (!BASE_URL) {
+    return null;
   }
   const chapters = await getAllChapters();
   return (
@@ -30,10 +28,11 @@ const Gita = async () => {
           {chapters.length > 0 &&
             chapters.map((item, index) => {
               return (
-                <Link href={`/features/gita/${item?.chapter_number}`} key={index}>
-                  <div
-                    className="w-[100%] h-50 bg-white/70  p-5 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:bg-[#ffcd9f]/60"
-                  >
+                <Link
+                  href={`/features/gita/${item?.chapter_number}`}
+                  key={index}
+                >
+                  <div className="w-[100%] h-50 bg-white/70  p-5 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:bg-[#ffcd9f]/60">
                     <p className="text-md font-bold mb-2 text-left text-[#ff933b]">
                       Chapter {item?.chapter_number}
                     </p>
