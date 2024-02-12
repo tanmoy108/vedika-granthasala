@@ -81,7 +81,7 @@ const Filter = ({ cate, lang }) => {
             ))}
         </select>
       </div>
-      <Button variant="own" size="lg"  onClick={ApplyFilter}>FILTER</Button>
+      <Button className="mb-5" variant="own" size="lg"  onClick={ApplyFilter}>FILTER</Button>
     </>
   );
 };

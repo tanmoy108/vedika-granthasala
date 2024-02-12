@@ -6,6 +6,15 @@ import DownloadButton from "./downloadButton";
 import { Button } from "@/components/ui/button";
 import { BASE_URL } from "@/lib/constant";
 
+export const generateMetadata = async ({ params }) => {
+  const oneBook =await GetData(params.id);
+  return {
+    title: `${oneBook?.title} - ${oneBook?.author[0]}`,
+    description: `Information of ${oneBook?.title}`,
+  };
+};
+
+
 const GetData = async (id) => {
   const fetchData = await fetch(`${BASE_URL}/api/books/${id}`);
   const res = await fetchData.json();

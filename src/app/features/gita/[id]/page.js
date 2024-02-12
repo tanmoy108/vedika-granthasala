@@ -4,6 +4,15 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { BASE_URL } from "@/lib/constant";
 
+export const generateMetadata = async({ params})=> {
+  const chapterDetails = await Details(params.id);
+  return{
+    title:`${chapterDetails?.name_translated}-Chapter ${chapterDetails?.chapter_number}`,
+    description:`${chapterDetails?.chapter_summary }`
+  }
+  }
+
+
 export const getAllChapters = async () => {
   const fetchBlog = await fetch(`${BASE_URL}/api/gitas/chapters`);
   const data = await fetchBlog.json();
