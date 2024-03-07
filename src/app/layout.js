@@ -12,7 +12,7 @@ export const metadata = {
   title: "Vedika Granthasala",
   description: "Vedika Granthasala, your one-stop online destination for a spiritual journey through the vast world of Hinduism. Immerse yourself in a treasure trove of knowledge as we offer an extensive collection of books, adorned with intricate poster designs featuring powerful mantras and shlokas. Explore our enriching blogs on Hinduism, generously shared without any cost.",
   openGraph: {
-    images: [{ url: "/onlylogo.jpg" }]
+    images: `https://res.cloudinary.com/shtanmoy/image/upload/v1709834879/vedas/onlylogo_bnlog1.jpg`
   },
 };
 
