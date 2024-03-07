@@ -15,9 +15,9 @@ export default function Page() {
                         >
                             Go back home
                         </Link>
-                        <div className="text-sm font-semibold text-[#fc9541]">
+                        {/* <div className="text-sm font-semibold text-[#fc9541]">
                             Contact support (tanmoysharma46@gmail.com)
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </main>

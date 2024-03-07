@@ -6,7 +6,7 @@ import React from 'react'
 const DownloadButton = ({url}) => {
 
   return (
-      <Link href= {url} >
+      <Link href= {url} target='_blank'>
           <Button variant="own" size="lg" className="my-6">Download</Button>
       </Link>
   )

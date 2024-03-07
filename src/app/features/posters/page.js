@@ -1,5 +1,6 @@
 import { BASE_URL } from "@/lib/constant";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export const metadata = {
@@ -29,7 +30,7 @@ const Page = async () => {
           {Array.isArray(mapPoster) &&
             mapPoster.length > 0 &&
             mapPoster.map((product) => (
-              <a key={product.id} href={product.url} className="group">
+              <Link target="_blank" key={product.id} href={product.url} className="group">
                 <div className="aspect-h-1 h-80 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                   <Image
                     src={product.url}
@@ -41,7 +42,7 @@ const Page = async () => {
                 </div>
                 <h3 className="mt-4 text-sm text-[#5e5e5e]">{product.title}</h3>
                 
-              </a>
+              </Link>
             ))}
         </div>
       </div>

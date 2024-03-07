@@ -35,7 +35,7 @@ const Page = async () => {
                   key={index}
                   className="max-w-sm h-[300px] overflow-hidden border border-gray-200 rounded-lg shadow bg-[#FCECDD]"
                 >
-                  <Link href={`/features/blogs/${item.id}`}>
+                  <Link href={`/features/blogs/${item.id}`}  scroll={true}>
                     <div className="overflow-hidden h-[60%] clipingcss">
                       <Image
                         className="rounded-t-lg h-full opacity-90"

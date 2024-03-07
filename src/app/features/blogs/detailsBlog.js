@@ -3,14 +3,28 @@ import React from "react";
 import { getAllBlogs } from "./page";
 import Link from "next/link";
 import { BASE_URL } from "@/lib/constant";
+import Head from "next/head";
 
 const DetailsBlog = async ({ blog }) => {
   if (!BASE_URL) {
     return null;
   }
+  const shuffleArray = (array) => {
+    let shuffledArray = array.slice();
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [
+        shuffledArray[j],
+        shuffledArray[i],
+      ];
+    }
+    return shuffledArray;
+  };
   let arr = await getAllBlogs();
   let newFilteredarr =
     arr && Array.isArray(arr) && arr.filter((blog) => blog.pending === false);
+
+  const shuffledBlogs = shuffleArray(newFilteredarr);
   const date = new Date(blog?.date);
 
   // Options for formatting
@@ -28,6 +42,25 @@ const DetailsBlog = async ({ blog }) => {
   const readableTime = date.toLocaleDateString("en-BD", options);
   return (
     <div>
+      <Head>
+        <title>{blog?.title || "Blog Title"}</title>
+        <meta name="description" content={blog?.description || "Description"} />
+
+        {/* Open Graph meta tags */}
+        <meta property="og:title" content={blog?.title || "Blog Title"} />
+        <meta
+          property="og:description"
+          content={blog?.description || "Description"}
+        />
+        <meta property="og:image" content={blog?.blogimage} />
+        <meta
+          property="og:url"
+          content={`https://yourwebsite.com/features/blogs/${blog?.id}`}
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Vedika Granthasala" />
+      </Head>
+
       <div className="bg-gray-100 w-[90%] mx-auto min-h-screen p-8">
         {/* Header */}
         <header className="mb-8">
@@ -49,7 +82,7 @@ const DetailsBlog = async ({ blog }) => {
             />
           </div>
           <p
-            className="text-justify text-[#5e5e5e] text-wrap"
+            className=" text-[#5e5e5e] text-wrap"
             dangerouslySetInnerHTML={{
               __html: blog?.description || "Description",
             }}
@@ -81,9 +114,9 @@ const DetailsBlog = async ({ blog }) => {
           Other Blogs
         </p>
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {Array.isArray(newFilteredarr) &&
-            newFilteredarr.length > 0 &&
-            newFilteredarr
+          {Array.isArray(shuffledBlogs) &&
+            shuffledBlogs.length > 0 &&
+            shuffledBlogs
               .filter((item) => item.id !== blog.id)
               .slice(0, 4)
               .map((product) => (
