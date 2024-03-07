@@ -3,7 +3,6 @@ import React from "react";
 import { getAllBlogs } from "./page";
 import Link from "next/link";
 import { BASE_URL } from "@/lib/constant";
-import Head from "next/head";
 
 const DetailsBlog = async ({ blog }) => {
   if (!BASE_URL) {
@@ -42,25 +41,6 @@ const DetailsBlog = async ({ blog }) => {
   const readableTime = date.toLocaleDateString("en-BD", options);
   return (
     <div>
-      <Head>
-        <title>{blog?.title || "Blog Title"}</title>
-        <meta name="description" content={blog?.description || "Description"} />
-
-        {/* Open Graph meta tags */}
-        <meta property="og:title" content={blog?.title || "Blog Title"} />
-        <meta
-          property="og:description"
-          content={blog?.description || "Description"}
-        />
-        <meta property="og:image" content={blog?.blogimage} />
-        <meta
-          property="og:url"
-          content={`https://yourwebsite.com/features/blogs/${blog?.id}`}
-        />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="Vedika Granthasala" />
-      </Head>
-
       <div className="bg-gray-100 w-[90%] mx-auto min-h-screen p-8">
         {/* Header */}
         <header className="mb-8">
