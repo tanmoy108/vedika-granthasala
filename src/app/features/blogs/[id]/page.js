@@ -27,22 +27,15 @@ const Page = async ({ params }) => {
   return (
     <>
       <head>
-        <title>{blog?.title || "Blog Title"}</title>
-        <meta name="description" content={blog?.description || "Description"} />
-
         {/* Open Graph meta tags */}
-        <meta property="og:title" content={blog?.title || "Blog Title"} />
-        <meta
-          property="og:description"
-          content={blog?.description || "Description"}
-        />
+        <meta property="og:title" content={blog?.title} />
         <meta property="og:image" content={blog?.blogimage} />
         <meta
           property="og:url"
-          content={`https://yourwebsite.com/features/blogs/${blog?.id}`}
+          content={`https://vedikagranthasala.vercel.app/features/blogs/${blog?.id}`}
         />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="Vedika Granthasala" />
+        {/* <meta property="og:type" content="article" /> */}
+        {/* <meta property="og:site_name" content="Vedika Granthasala" /> */}
       </head>
       <DetailsBlog blog={blog} />
     </>
