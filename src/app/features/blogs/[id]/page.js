@@ -3,13 +3,18 @@ import dynamic from "next/dynamic";
 import DetailsBlog from "../detailsBlog";
 import { BASE_URL } from "@/lib/constant";
 
-// export const generateMetadata = async ({ params }) => {
-//   const blog = await GetSpecificBlog(params.id);
-//   return {
-//     title: `${blog?.title}`,
-//     description: `Information of ${blog?.title}`,
-//   };
-// };
+export const generateMetadata = async ({ params }) => {
+  const blog = await GetSpecificBlog(params.id);
+  return {
+    title: `${blog?.title}`,
+    description: `${blog?.description}`,
+    openGraph: {
+      images: `${blog?.blogimage}`,
+      title: `${blog?.title}`,
+      description: `${blog?.description}`,
+    },
+  };
+};
 
 export const GetSpecificBlog = async (id) => {
   const fetchBlog = await fetch(`${BASE_URL}/api/blogs/specific/${id}`, {
@@ -26,17 +31,6 @@ const Page = async ({ params }) => {
   const blog = await GetSpecificBlog(params.id);
   return (
     <>
-      <head>
-        {/* Open Graph meta tags */}
-        <meta property="og:title" content={blog?.title} />
-        <meta property="og:image" content={blog?.blogimage} />
-        <meta
-          property="og:url"
-          content={`https://vedikagranthasala.vercel.app/features/blogs/${blog?.id}`}
-        />
-        {/* <meta property="og:type" content="article" /> */}
-        {/* <meta property="og:site_name" content="Vedika Granthasala" /> */}
-      </head>
       <DetailsBlog blog={blog} />
     </>
   );
