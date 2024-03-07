@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
             <div>
               {children}
             </div>
-            <Hidden className="hidden"/>
+            {/* <Hidden className="hidden"/> */}
             <Footer/>
          </Providers>
         </div>
