@@ -122,26 +122,26 @@ const Page = async ({ params }) => {
 
 export default Page;
 
-// export async function generateStaticParams() {
-//   if (!BASE_URL) {
-//     return null;
-//   }else{
-//   try {
-//     const gitaNumber = await getReferences();
-//     if (!gitaNumber) {
-//       return null;
-//     }
+export async function generateStaticParams() {
+  if (!BASE_URL) {
+    return null;
+  }else{
+  try {
+    const gitaNumber = await getReferences();
+    if (!gitaNumber) {
+      return null;
+    }
 
-//     return gitaNumber
-//       .filter(item => item && item.verse)
-//       .flatMap((item) =>
-//         item.verse.map((slok) => ({
-//           chapter: item?.chapter?.toString(),
-//           verse: slok?.toString(),
-//         }))
-//       );
-//   } catch (error) {
-//     return []; 
-//   }
-// }
-// }
+    return gitaNumber
+      .filter(item => item && item.verse)
+      .flatMap((item) =>
+        item.verse.map((slok) => ({
+          chapter: item?.chapter?.toString(),
+          verse: slok?.toString(),
+        }))
+      );
+  } catch (error) {
+    return []; 
+  }
+}
+}
