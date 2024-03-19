@@ -13,6 +13,9 @@ export const generateMetadata = ({ params }) => {
   return {
     title: `ShrimadBhagwat Geeta chapter ${chapter} verse ${verse}`,
     description: `Information of gita chapter no ${chapter} gita verse no ${verse} of Shrimad Bhagwat Geeta`,
+    openGraph: {
+      images: `https://res.cloudinary.com/shtanmoy/image/upload/v1710882249/vedas/1616866597415_qh8rvr.jpg`
+    },
   };
 };
 

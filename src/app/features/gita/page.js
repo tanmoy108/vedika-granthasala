@@ -4,8 +4,11 @@ import Link from "next/link";
 import { BASE_URL } from "@/lib/constant";
 
 export const metadata = {
-  title: "Shrimad Bhagwat Geeta Vedika Granthasala",
+  title: "Shrimad Bhagwat Geeta",
   description: "Shrimad Bhagwat Geeta Page of Vedika Granthasala",
+  openGraph: {
+    images: `https://res.cloudinary.com/shtanmoy/image/upload/v1710882058/vedas/bhagavad-gita-quotes-on-positive-thinking-1_gd8rhp.jpg`
+  },
 };
 
 export const getAllChapters = async () => {

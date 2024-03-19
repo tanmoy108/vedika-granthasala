@@ -10,9 +10,16 @@ const Design =async () => {
     return null
   }
     const mapPoster = await GetAllPoster();
+
+    const bgImage = {
+      backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url("/design.png")`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height: "20rem",
+  };
   return (
     <div className='w-11/12 mx-auto'>
-     <p className="text-4xl font-extrabold text-center text-[#374246] my-8">Designs</p>
+     <p className="text-4xl font-extrabold text-center text-[#374246] my-8">Poster Designs</p>
      <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {Array.isArray(mapPoster) &&
             mapPoster.length > 0 &&
@@ -31,8 +38,8 @@ const Design =async () => {
               </Link>
             ))}
             <Link href="/features/posters" >
-            <div className="flex justify-center items-center aspect-h-1 h-80 px-5 aspect-w-1 w-full overflow-hidden rounded-lg bg-[#fdf2d8] xl:aspect-h-8 xl:aspect-w-7">
-                  <p className='text-2xl text-[#5e5e5e] font-semibold text-center'>
+            <div className="flex justify-center items-center  h-80 px-5 aspect-w-1 w-full overflow-hidden rounded-lg xl:aspect-h-8 xl:aspect-w-7" style={bgImage}>
+                  <p className='text-2xl text-[#fdf2d8] font-semibold text-center'>
                     Click For More
                   </p>
                 </div>

@@ -11,6 +11,11 @@ export const generateMetadata = async ({ params }) => {
   return {
     title: `${oneBook?.title} - ${oneBook?.author[0]}`,
     description: `Information of ${oneBook?.title}`,
+    openGraph: {
+      images: `${oneBook?.cover}`,
+      title: `${oneBook?.title} - ${oneBook?.author[0]}`,
+    description: `Information of ${oneBook?.title}`,
+    },
   };
 };
 
@@ -40,7 +45,7 @@ const Page = async ({ params }) => {
   return (
     <div className="flex justify-center">
       <div className="w-11/12 px-5 mt-5">
-        <Link href="/features/books/All/Hindi">
+        <Link href="/features/books/All/Bengali">
           <Button variant="own">Back</Button>
         </Link>
         <div className="w-full my-4 h-auto flex flex-col sm:flex-row justify-between overflow-hidden shadow-md bg-[#FFFFFF] divide-x rounded-lg ">
@@ -75,10 +80,10 @@ const Page = async ({ params }) => {
               <span className="font-semibold text-[#374246]">Publisher:</span>{" "}
               {oneBookData.publisher}
             </p>
-            <p className="text-[#5e5e5e]">
+            {/* <p className="text-[#5e5e5e]">
               <span className="font-semibold text-[#374246]">Publish Year: </span>
               {oneBookData.publishYear}
-            </p>
+            </p> */}
             <p className="text-[#5e5e5e]">
               <span className="font-semibold text-[#374246]">Language: </span>
               {oneBookData.language}

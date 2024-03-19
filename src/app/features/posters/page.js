@@ -4,8 +4,11 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata = {
-  title: "Poster - Vedika Granthasala",
-  description: "Hinduism Poster, design, mantra, shokha , vedas, gita, scriptures",
+  title: "Poster Design",
+  description: "Hinduism Poster, design, mantra, shokha , vedas, gita, scriptures, graphic design, design",
+  openGraph: {
+    images: `https://res.cloudinary.com/shtanmoy/image/upload/v1710881751/vedas/screencapture-vedikagranthasala-vercel-app-features-posters-2024-03-20-02_51_04_g0nmdl.png`
+  },
 };
 
 

@@ -56,6 +56,7 @@ const Filter = ({ cate, lang }) => {
           className="w-40 border-2 border-gray-300 rounded-md text-gray-600 font-semibold h-10 pl-5 pr-5 bg-white hover:border-gray-400 focus:outline-none "
           onChange={handleCategoryChange}
           value={selectedCategory}
+          disabled
         >
           <option value="All">All</option>
           {category.length > 0 &&
@@ -72,6 +73,7 @@ const Filter = ({ cate, lang }) => {
           className="w-40 border-2 border-gray-300 rounded-md text-gray-600 font-semibold h-10 pl-5 pr-5 bg-white hover:border-gray-400 focus:outline-none "
           onChange={handleLanguageChange}
           value={selectedLanguage}
+          disabled
         >
           {language.length > 0 &&
             language.map((item) => (
@@ -81,7 +83,7 @@ const Filter = ({ cate, lang }) => {
             ))}
         </select>
       </div>
-      <Button className="mb-5" variant="own" size="lg"  onClick={ApplyFilter}>FILTER</Button>
+      <Button disabled className="mb-5" variant="own" size="lg"  onClick={ApplyFilter}>FILTER</Button>
     </>
   );
 };

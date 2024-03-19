@@ -17,7 +17,7 @@ const barContent = [
     },
     {
         item:"Books",
-        url:"/features/books/All/Hindi"
+        url:"/features/books/All/Bengali"
     },
     {
         item:"Designs",

@@ -10,11 +10,11 @@ const Header = () => {
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 mt-10 md:w-6/12 ">
               <div className="hero-content">
-                <h1 className="mb-5 text-4xl font-black text-[#374246] !leading-[1.208] sm:text-[42px] lg:text-[40px] xl:text-5xl">
-                  We Provide Holistic Posters, Sacred Scriptures, and
+                <h1 className="mb-5 text-3xl font-black text-[#374246] !leading-[1.208] sm:text-[32px] lg:text-[30px] xl:text-4xl">
+                  Namaste, We Provide Holistic Posters, Sacred Scriptures, and
                   Enlightened Blogs
                 </h1>
-                <p className="mb-8 max-w-[480px] text-base text-[#5e5e5e] text-justify">
+                <p className="mb-8 max-w-[480px] sm:max-w-full text-base text-[#5e5e5e] text-justify">
                   Discover harmony in our holistic posters, delve into the
                   timeless wisdom of sacred scriptures, and explore enlightened
                   blogs that illuminate the essence of Hindu philosophy. Welcome
@@ -24,7 +24,7 @@ const Header = () => {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center">
                   <div>
                     <Link
-                      href="/features/books/All/Hindi"
+                      href="/features/books/All/Bengali"
                       className="inline-flex items-center justify-center rounded-md bg-[#fc9541] py-3 text-center text-base font-medium text-white hover:bg-[#fc9541]/90 px-4 lg:px-9"
                     >
                       Get Books
@@ -60,8 +60,8 @@ const Header = () => {
               <div className="lg:ml-auto lg:text-right">
                 <div className="relative z-10 inline-block pt-11 lg:pt-0">
                   <Image
-                    src="/library2.jpg"
-                    alt="library header photo"
+                    src="/om2.jpeg"
+                    alt="Aum photo"
                     width={1000}
                     height={2000}
                     className="max-w-full lg:ml-auto opacity-80 overflow-hidden"

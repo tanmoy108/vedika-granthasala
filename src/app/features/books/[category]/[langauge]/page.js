@@ -4,8 +4,11 @@ import Filter from "../../filter";
 import { BASE_URL } from "@/lib/constant";
 
 export const metadata = {
-  title: "Book - Vedika Granthasala",
+  title: "Vedas Related Books",
   description: "Hinduism Book, vedas, gita, scriptures",
+  openGraph: {
+    images: `https://res.cloudinary.com/shtanmoy/image/upload/v1710882384/vedas/screencapture-vedikagranthasala-vercel-app-features-books-All-Hindi-2024-03-20-02_58_01_cceghq.png`
+  },
 };
 
 
